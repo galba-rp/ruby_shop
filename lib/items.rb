@@ -1,5 +1,5 @@
 class Items
-
+  # in case of user input consists of multiple items, spliting input to array
   def parse(items)
     items.chomp.downcase
     array = items.split(',')
