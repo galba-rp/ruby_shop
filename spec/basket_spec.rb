@@ -12,12 +12,27 @@ RSpec.describe Basket do
   #   end
   # end
   describe "#calculate total" do
-    it "returns 'total 175'" do
+    it "returns 'total 275'" do
       bask = described_class.new
       bask.addToBasket("pommes")
       bask.addToBasket("pommes")
+      bask.addToBasket("cerise")
 
-      expect(bask.total).to eql(200)
+      expect(bask.total).to eql(275)
+    end
+  end
+
+  describe "#add discount" do
+    it "returns 'total 275'" do
+      bask = described_class.new
+      bask.addToBasket("pommes")
+      bask.addToBasket("cerise")
+      bask.addToBasket("cerise")
+      bask.addToBasket("bananas")
+      bask.addToBasket("bananas")
+      bask.addDiscount
+
+      expect(bask.total).to eql(380)
     end
   end
 end
