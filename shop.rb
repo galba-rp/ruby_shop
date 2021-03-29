@@ -14,9 +14,9 @@ ARGF.each do |prod|
 
   prod_cleaned.each do |i|
     i.chomp
-    bask.addToBasket(i)
+    bask.add_to_basket(i)
   end
-  bask.printBasket
-  puts "Total is #{(bask.total)}"
+  bask.print_basket
+  puts "Total is #{bask.total}"
   print "Entrez un fruit : "
 end

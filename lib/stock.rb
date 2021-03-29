@@ -5,6 +5,6 @@ class Stock
     "cerise" => 75,
     "pommes" => 100,
     "apples" => 100,
-    "mele" => 100,
-  }
+    "mele" => 100
+  }.freeze
 end
