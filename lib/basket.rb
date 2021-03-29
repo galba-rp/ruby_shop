@@ -1,5 +1,5 @@
-require './lib/stock'
-require './lib/discounts'
+require "./lib/stock"
+require "./lib/discounts"
 
 class Basket
   attr_accessor :basket, :total
@@ -8,22 +8,22 @@ class Basket
     @basket = Hash.new
     @total = 0
     @fruits = Stock::FRUITS
-    @discounts = Discounts:: DISCOUNT_CONDITIONS
+    @discounts = Discounts::DISCOUNT_CONDITIONS
   end
 
-  # n is an array of item's name and quantity 
+  # n is an array of item's name and quantity
   def printBasket
-    @basket.each { |n| puts 'Vous avez ' + n[1].to_s + ' ' + n[0]}
+    @basket.each { |n| puts "Vous avez " + n[1].to_s + " " + n[0] }
   end
 
   def addToBasket(item)
     return addDiscount() if item == "total"
-    return puts"Fruits n'existe pas" if  !@fruits.include?(item)
- 
+    return puts "Fruits n'existe pas" if !@fruits.include?(item)
+
     if @basket[item] != nil && @fruits.include?(item)
       @basket[item] += 1
     else
-      @basket.store(item,1)
+      @basket.store(item, 1)
     end
     addToTotal(item)
   end
@@ -33,9 +33,9 @@ class Basket
   end
 
   def addDiscount
-    @basket.each {|n| 
+    @basket.each { |n|
       @discounts.each { |i|
-        @total -= n[1]/i[1] * i[2] if  i.include?(n[0])
+        @total -= n[1] / i[1] * i[2] if i.include?(n[0])
       }
     }
     @total

@@ -1,12 +1,12 @@
-require 'pry'
-require './lib/items'
-require './lib/stock'
-require './lib/basket'
+require "pry"
+require "./lib/items"
+require "./lib/stock"
+require "./lib/basket"
 
 items = Items.new
-bask  = Basket.new
+bask = Basket.new
 
-print 'Entrez un fruit : '
+print "Entrez un fruit : "
 
 ARGF.each do |prod|
   prod_parsed = items.parse(prod)
@@ -18,5 +18,5 @@ ARGF.each do |prod|
   end
   bask.printBasket
   puts "Total is #{(bask.total)}"
-  print 'Entrez un fruit : '
+  print "Entrez un fruit : "
 end
