@@ -1,7 +1,9 @@
 class Discounts
   DISCOUNT_CONDITIONS = [
-    ["cerise", 2, 20],
     ["bananas", 2, 150],
-    ["mele", 3, 100]
+    ["cerise", 2, 20],
+    ["mele", 3, 100],
+    ["Cerises", 2, 20],
+   
   ]
 end

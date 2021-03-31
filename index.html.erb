@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>shop</title>
+</head>
+
+<body>
+  <form action="/add" method="post">
+    <div class="form-group">
+      <label for="product">Enter your product:</label>
+      <input type="text" name="product" class="form-control" placeholder="" id="product">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Submit"> 
+    <%  @bask.basket.each do |key, value|%> 
+    <p> <%= "#{key} : #{value}"%></p> 
+    <%end%> 
+    <p>Total : <%= @total %></p>
+    <input type="submit" name="product" formaction="/add" value="Checkout" method="post">
+  </form>
+</body>
+</body>
+
+</html>

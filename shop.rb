@@ -3,7 +3,7 @@ require "./lib/items"
 require "./lib/stock"
 require "./lib/basket"
 
-items = Items.new
+# items = Items.new
 bask = Basket.new
 
 print "Entrez un fruit : "
