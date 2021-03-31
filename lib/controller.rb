@@ -11,20 +11,21 @@ attr_accessor :params
 
   def index
     total = basket.total
-    cart = @basket.basket
-    
+    cart = basket.basket
 
     render "index", total: total, basket:cart
   end
 
   def add
-    p "fruit #{params["product"]}"
     product = items.parse(params["product"])
     product = items.clean(product)
+
     product.each do |i|
       i.chomp
       basket.add_to_basket(i)
     end
+    
+    redirect "/"
   end
 
   def not_found

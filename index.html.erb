@@ -13,10 +13,10 @@
       <input type="text" name="product" class="form-control" placeholder="" id="product">
     </div>
     <input type="submit" class="btn btn-primary" value="Submit"> 
-    <%  @bask.basket.each do |key, value|%> 
+    <%  basket.each do |key, value|%> 
     <p> <%= "#{key} : #{value}"%></p> 
     <%end%> 
-    <p>Total : <%= @total %></p>
+    <p>Total : <%= total %></p>
     <input type="submit" name="product" formaction="/add" value="Checkout" method="post">
   </form>
 </body>

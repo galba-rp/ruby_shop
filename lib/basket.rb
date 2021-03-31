@@ -13,6 +13,8 @@ class Basket
     @fruits = Db_data.new.fruit
     @discounts = Discounts::DISCOUNT_CONDITIONS
   end
+
+
   # n is an array of item's name and quantity
   def print_basket
     @basket.each { |n| puts "Vous avez " + n[1].to_s + " " + n[0] }
@@ -33,12 +35,15 @@ class Basket
   def add_to_total(i)
     @total += @fruits[i]
   end
-#TODO break the loop if product found
+
   def add_discount
-    puts "disc"
+    stop = false
+
     @basket.each { |n|
       @discounts.each { |i|
-        @total -= n[1] / i[1] * i[2] if i.include?(n[0])
+        stop = i.include?(n[0])
+        @total -= n[1] / i[1] * i[2] if stop
+        break if stop
       }
     }
     @total
